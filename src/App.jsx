@@ -12,14 +12,17 @@ function App() {
   const [jobs, setJobs] = useState(() => {
     const saved = localStorage.getItem('jobTracker')
     return saved ? JSON.parse(saved) : [
-      { id: 1, company: 'Webmax Solution', role: 'Junior Full-Stack Developer', location: 'South Africa', workArrangement: 'Remote', dateApplied: '2026-09-15', status: 'Applied', jobLink: '', notes: 'Waiting for response' },
-      { id: 2, company: 'YO IT Consulting', role: 'Document Reviewer', location: 'Johannesburg', workArrangement: 'Onsite', dateApplied: '2026-09-20', status: 'Interview', jobLink: '', notes: 'Interview scheduled' },
-      { id: 3, company: 'Micro1', role: 'Generalist', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-09-25', status: 'Interview', jobLink: '', notes: 'AI interview completed' },
-      { id: 4, company: 'Alignerr', role: 'Generalist', location: 'Remote', workArrangement: 'Hybrid', dateApplied: '2026-10-01', status: 'Applied', jobLink: '', notes: '' },
-      { id: 5, company: 'Hire Feed', role: 'AI Trainer', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-10-05', status: 'Applied', jobLink: '', notes: '' },
-      { id: 6, company: 'Jobgether', role: 'Data Annotation Analyst', location: 'Cape Town', workArrangement: 'Onsite', dateApplied: '2026-10-08', status: 'Applied', jobLink: '', notes: '' },
-      { id: 7, company: 'Assist World', role: 'Virtual Assistant', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-10-10', status: 'Applied', jobLink: '', notes: '' },
-      { id: 8, company: 'Alirian', role: 'AI Developer Intern', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-09-28', status: 'Interview', jobLink: '', notes: 'Interview was scheduled' },
+      { id: 1, company: 'Webmax Solution', role: 'Junior Full-Stack Developer', location: 'South Africa', workArrangement: 'Remote', dateApplied: '2026-09-15', status: 'Applied', jobLink: '', notes: 'Fully remote position' },
+      { id: 2, company: 'YO IT Consulting', role: 'Document Reviewer', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-09-20', status: 'Interview', jobLink: '', notes: 'Interview scheduled' },
+      { id: 3, company: 'Micro1', role: 'Generalist', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-09-25', status: 'Interview', jobLink: '', notes: 'Remote contract, AI interview completed' },
+      { id: 4, company: 'Quik Hire Staffing', role: 'Frontend Web Developer (HTML/CSS)', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-10-01', status: 'Applied', jobLink: '', notes: '' },
+      { id: 5, company: 'Alignerr', role: 'Generalist', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-10-05', status: 'Applied', jobLink: '', notes: 'Remote opportunity' },
+      { id: 6, company: 'Hire Feed', role: 'AI Trainer', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-10-08', status: 'Applied', jobLink: '', notes: 'Remote opportunity' },
+      { id: 7, company: 'Jobgether', role: 'Data Annotation Analyst', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-10-10', status: 'Applied', jobLink: '', notes: 'Work arrangement not confirmed' },
+      { id: 8, company: 'Assist World', role: 'Virtual Assistant', location: 'Remote', workArrangement: 'Remote', dateApplied: '2026-10-12', status: 'Applied', jobLink: '', notes: 'Remote opportunity' },
+      { id: 9, company: 'Ryan AI / Alirian', role: 'AI Developer Intern', location: 'South Africa', workArrangement: 'Onsite', dateApplied: '2026-09-28', status: 'Interview', jobLink: '', notes: 'In-house / on-site position' },
+      { id: 10, company: 'Byte Orbit', role: 'Junior Software Developer', location: 'South Africa', workArrangement: 'Remote', dateApplied: '2026-10-15', status: 'Interested', jobLink: '', notes: 'Work arrangement not confirmed' },
+      { id: 11, company: 'SoluGrowth', role: 'Junior C# Developer — React, Azure', location: 'South Africa', workArrangement: 'Remote', dateApplied: '2026-10-16', status: 'Interested', jobLink: '', notes: 'Work arrangement not confirmed' },
     ]
   })
 
@@ -47,10 +50,12 @@ function App() {
 
   const handleEditJob = (job) => {
     setEditingJob(job)
+    setCurrentView('add')
   }
 
   const handleCancelEdit = () => {
     setEditingJob(null)
+    setCurrentView('applications')
   }
 
   const updateStatus = (id, newStatus) => {
