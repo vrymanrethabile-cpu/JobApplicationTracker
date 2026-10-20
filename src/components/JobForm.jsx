@@ -184,4 +184,3 @@ function JobForm({ onSubmit, editJob, onCancelEdit }) {
 }
 
 export default JobForm
-export default JobForm
