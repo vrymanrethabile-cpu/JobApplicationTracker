@@ -71,6 +71,7 @@ function JobForm({ onSubmit, editJob, onCancelEdit }) {
             onChange={handleChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
             placeholder="Company name"
+            style={{ color: '#111827', backgroundColor: '#ffffff' }}
           />
         </div>
         <div>
@@ -82,6 +83,7 @@ function JobForm({ onSubmit, editJob, onCancelEdit }) {
             onChange={handleChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
             placeholder="Job title"
+            style={{ color: '#111827', backgroundColor: '#ffffff' }}
           />
         </div>
         <div>
@@ -93,6 +95,7 @@ function JobForm({ onSubmit, editJob, onCancelEdit }) {
             onChange={handleChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
             placeholder="Location"
+            style={{ color: '#111827', backgroundColor: '#ffffff' }}
           />
         </div>
         <div>
@@ -116,8 +119,9 @@ function JobForm({ onSubmit, editJob, onCancelEdit }) {
             name="dateApplied"
             value={formData.dateApplied}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-900"
             required
+            style={{ color: '#111827', backgroundColor: '#ffffff' }}
           />
         </div>
         <div>
@@ -154,6 +158,7 @@ function JobForm({ onSubmit, editJob, onCancelEdit }) {
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
             rows="3"
             placeholder="Any additional notes..."
+            style={{ color: '#111827', backgroundColor: '#ffffff' }}
           />
         </div>
         <div className="flex gap-2">
@@ -178,4 +183,5 @@ function JobForm({ onSubmit, editJob, onCancelEdit }) {
   )
 }
 
+export default JobForm
 export default JobForm
